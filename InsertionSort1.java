@@ -30,7 +30,7 @@ class InsertionSort1Result {
             while (j >= 0 && arr.get(j) > val) {
                 arr.set(j+1, arr.get(j));
                 j--;
-       cd      }
+            }
             arr.set(j+1, val);
         }
     }
@@ -42,14 +42,14 @@ public class InsertionSort1 {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
-gi
+
         List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(toList());
 
         InsertionSort1Result.insertionSort1(n, arr);
 
-        System.out.println(arr);
+        System.out.println("Result: " + arr);
 
         bufferedReader.close();
     }
