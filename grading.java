@@ -23,7 +23,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-class Result {
+class GradingResult {
 
     private static final int passGrade = 40;
 
@@ -59,7 +59,7 @@ class Result {
 
 }
 
-class Solution {
+class GradingSolution {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
@@ -77,7 +77,7 @@ class Solution {
             .map(Integer::parseInt)
             .collect(toList());
 
-        List<Integer> result = Result.gradingStudents(grades);
+        List<Integer> result = GradingResult.gradingStudents(grades);
 
         bufferedWriter.write(
             result.stream()
