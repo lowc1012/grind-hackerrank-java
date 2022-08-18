@@ -58,9 +58,11 @@ class WinningSequence {
             index++;
         }
         // range = [lower, lower +1 , ...., upper, upper-1, ... , lower]
+        //         [3, 4, 5 ,6, 7, 8, 9, 10, 9, 8 , 7, ..., 3]
 
-        // The start index should be the upper - 1 element index
-        // or range.length - n (if n > rangeSize or range / 2)
+        // The start should be the index of (upper - 1)'s element
+        // or range.length - n (if n > range.length or rangeLength / 2)
+        // Note: index of (upper - 1)'s element = upper - lower - 1 = rangeLength - 2
         int start = Math.min(rangeLength - 2, range.length - n);
 
         for (int i = start; i < range.length; i++) {
